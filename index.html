@@ -250,7 +250,7 @@
           <div class="step"><span class="step-number">1</span><h3>운용 추가</h3><p>목록의 점선 + 카드 또는 전체 메뉴의 운용 추가에서 신규 추가·엑셀 가져오기를 선택합니다.</p></div>
           <div class="step"><span class="step-number">2</span><h3>운용 기준 설정</h3><p>시장, 종목, 시작일, 금액, 분할횟수, 목표수익률과 운영버전을 확인합니다.</p></div>
           <div class="step"><span class="step-number">3</span><h3>종가와 주문계획</h3><p>최신 종가 날짜를 확인하고 주문계획을 계산합니다. 실제 주문은 증권사 앱에서 직접 실행합니다.</p></div>
-          <div class="step"><span class="step-number">4</span><h3>체결 저장</h3><p>직접 입력, 카카오톡 체결문 붙여넣기, 카카오톡 체결 알림 자동 가져오기 중에서 선택합니다.</p></div>
+          <div class="step"><span class="step-number">4</span><h3>체결 저장</h3><p>직접 입력, 카카오톡 체결문 붙여넣기, 카카오톡 체결 알림 자동 저장, Excel 업로드 일괄 입력 중에서 선택합니다.</p></div>
           <div class="step"><span class="step-number">5</span><h3>결과 검산</h3><p>매매이력, 평균단가, 보유수량, 현금과 손익을 실제 거래명세와 비교합니다.</p></div>
           <div class="step"><span class="step-number">6</span><h3>백업</h3><p>주요 변경 전 8자 이상의 비밀번호로 휴대전화 또는 Google Drive에 암호화 백업합니다.</p></div>
         </div>
@@ -312,7 +312,7 @@
 
       <section id="trades">
         <h2>체결 입력과 매매이력</h2>
-        <p>체결 입력은 아래 3가지 방식을 지원합니다.</p>
+        <p>체결 입력은 아래 4가지 방식을 지원합니다.</p>
         <div class="quick-grid">
           <div class="step">
             <span class="step-number">1</span>
@@ -326,11 +326,17 @@
           </div>
           <div class="step">
             <span class="step-number">3</span>
-            <h3>카카오톡 체결 알림 자동 가져오기</h3>
+            <h3>카카오톡 체결 알림 자동 저장 지원</h3>
             <p>알림 접근을 허용하면 카카오톡 체결 알림을 자동으로 감지·분석하여 기기 내부 승인 대기함에 저장합니다. 종 아이콘에서 내용을 확인·수정하고 승인하면 해당 운용의 매매이력에 반영됩니다.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">4</span>
+            <h3>Excel 업로드로 일괄 입력</h3>
+            <p>작성한 매매기록 파일을 불러오면 첫 거래일부터 모든 체결을 입력 순서대로 일괄 저장하고 평균단가·수량·현금·손익을 다시 계산합니다.</p>
           </div>
         </div>
         <div class="callout"><strong>자동 가져오기는 승인 대기함에 저장됩니다</strong>잘못 인식된 체결이 바로 반영되지 않도록 3번 방식도 매매이력에 즉시 저장하지 않습니다. 사용자가 승인한 체결만 매매이력에 반영됩니다.</div>
+        <div class="callout"><strong>Excel 가져오기의 적용 범위</strong>4번 방식은 기존 운용의 매매이력에 덧붙이는 기능이 아닙니다. 전체 메뉴 → 운용 추가 → Excel 가져오기에서 Excel 기록을 바탕으로 새 운용을 만들 때 사용합니다.</div>
         <ul>
           <li>총 정산금액이 있으면 실제 출금·입금 금액을 기준으로 계산하는 데 사용합니다.</li>
           <li>수량 계산 결과는 정수여야 하며, 미국 종목의 체결일은 미국 동부시간 날짜를 기본값으로 사용합니다.</li>
@@ -369,7 +375,7 @@
       </section>
 
       <section id="notifications">
-        <h2>3. 카카오톡 체결 알림 자동 가져오기</h2>
+        <h2>3. 카카오톡 체결 알림 자동 저장 지원</h2>
         <ol>
           <li>전체 메뉴에서 체결 알림 자동 가져오기를 엽니다.</li>
           <li>처리 내용 안내를 확인하고 기능을 켠 뒤 Android 설정에서 알림 접근을 허용합니다.</li>
