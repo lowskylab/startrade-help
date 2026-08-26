@@ -206,7 +206,7 @@
           </div>
         </div>
         <p class="lead">운용 등록부터 주문계획 확인, 체결 기록, 통계와 암호화 백업까지 현재 앱 화면을 기준으로 안내합니다.</p>
-        <span class="version">v2.60 · versionCode 92 기준</span>
+        <span class="version">v2.60 · versionCode 96 기준</span>
       </div>
       <img class="hero-star" src="assets/app-icon.png" alt="">
     </div>
@@ -250,7 +250,7 @@
           <div class="step"><span class="step-number">1</span><h3>운용 추가</h3><p>목록의 점선 + 카드 또는 전체 메뉴의 운용 추가에서 신규 추가·엑셀 가져오기를 선택합니다.</p></div>
           <div class="step"><span class="step-number">2</span><h3>운용 기준 설정</h3><p>시장, 종목, 시작일, 금액, 분할횟수, 목표수익률과 운영버전을 확인합니다.</p></div>
           <div class="step"><span class="step-number">3</span><h3>종가와 주문계획</h3><p>최신 종가 날짜를 확인하고 주문계획을 계산합니다. 실제 주문은 증권사 앱에서 직접 실행합니다.</p></div>
-          <div class="step"><span class="step-number">4</span><h3>체결 저장</h3><p>직접 입력, 카카오톡 체결문 붙여넣기, 카카오톡 체결 알림 자동 저장, Excel 업로드 일괄 입력 중에서 선택합니다.</p></div>
+          <div class="step"><span class="step-number">4</span><h3>체결 저장</h3><p>직접 입력, 카카오톡 체결문 붙여넣기, 카카오톡 체결 알림 자동 가져오기, Excel 업로드 일괄 입력 중에서 선택합니다.</p></div>
           <div class="step"><span class="step-number">5</span><h3>결과 검산</h3><p>매매이력, 평균단가, 보유수량, 현금과 손익을 실제 거래명세와 비교합니다.</p></div>
           <div class="step"><span class="step-number">6</span><h3>백업</h3><p>주요 변경 전 8자 이상의 비밀번호로 휴대전화 또는 Google Drive에 암호화 백업합니다.</p></div>
         </div>
@@ -296,7 +296,7 @@
             <tbody>
               <tr><td>외부 종가 새로고침</td><td>시세 자료만 갱신합니다. 이미 저장된 주문계획은 자동으로 바뀌지 않습니다.</td></tr>
               <tr><td>주문계획 재계산</td><td>종가를 갱신한 뒤 현재 조건으로 새 계획을 계산하고 저장합니다.</td></tr>
-              <tr><td>증권앱열기</td><td>주문정보를 클립보드에 복사하고 사용자가 등록한 증권사 앱을 엽니다.</td></tr>
+              <tr><td>증권사 앱 열기</td><td>사용자가 등록한 증권사 앱을 엽니다. 가격·수량과 주문조건은 앱에서 확인한 뒤 증권사 앱에 직접 입력합니다.</td></tr>
               <tr><td>일반모드</td><td>Star·평단 LOC 매수와 Star·목표가 매도 계획을 표시합니다.</td></tr>
               <tr><td>리버스모드</td><td>조건 충족 시 MOC 매도와 최근 5거래일 평균 LOC 계획을 표시합니다.</td></tr>
             </tbody>
@@ -306,6 +306,7 @@
           <li>주문계획에 사용된 종가 날짜와 마지막 계산 시각을 확인합니다.</li>
           <li>16시 이후 자동 갱신이 실패하면 최근 정상 종가의 날짜를 안내하고 저장 자료로 계산을 이어갈 수 있습니다.</li>
           <li>주문주기 안에서 체결이나 T값이 바뀌어도 재계산 버튼을 누르기 전까지 고정 계획을 유지합니다.</li>
+          <li>추가 1주 LOC 가격은 한 줄에 최대 3개씩 표시하며 Star·평단 주문과 구분해 확인합니다.</li>
           <li>증권사 앱에서 LOC·MOC 지원 여부, 주문 가능시간, 가격·수량과 예상금액을 반드시 다시 확인합니다.</li>
         </ul>
       </section>
@@ -326,7 +327,7 @@
           </div>
           <div class="step">
             <span class="step-number">3</span>
-            <h3>카카오톡 체결 알림 자동 저장 지원</h3>
+            <h3>카카오톡 체결 알림 자동 가져오기</h3>
             <p>알림 접근을 허용하면 카카오톡 체결 알림을 자동으로 감지·분석하여 기기 내부 승인 대기함에 저장합니다. 종 아이콘에서 내용을 확인·수정하고 승인하면 해당 운용의 매매이력에 반영됩니다.</p>
           </div>
           <div class="step">
@@ -352,7 +353,7 @@
         <div class="feature-grid">
           <div class="feature"><h3>운용상세 리포트</h3><p>가격 추세, 운영 계획, 매매 내역, 보유 규모와 현재·최종 성과를 확인합니다.</p></div>
           <div class="feature"><h3>운용 통계</h3><p>기간, 현재·종료 상태, 종목과 포함조건을 선택해 여러 운용의 결과를 함께 봅니다.</p></div>
-          <div class="feature"><h3>가격·보유 추세</h3><p>두 손가락으로 확대·축소하고 좌우 이동 또는 전체화면으로 구간을 자세히 확인합니다.</p></div>
+          <div class="feature"><h3>가격·보유 추세</h3><p>종가·평균단가·Star 가격·목표가 선과 보유수량 변화를 확인합니다. Star 가격은 점선으로 표시하며 확대·축소, 좌우 이동과 전체화면을 지원합니다.</p></div>
           <div class="feature"><h3>Excel 내보내기</h3><p>화면과 같은 성과 순서의 요약 시트와 매매 자료를 파일로 저장합니다.</p></div>
         </div>
         <p>통계의 <strong>기간과 겹침</strong> 조건은 선택 기간과 실제 운용기간이 일부라도 겹치는 현재·종료 운용을 포함합니다. 전체 종목 조회 시 같은 종목의 여러 운용은 통합하고 한국·미국 통화를 구분합니다.</p>
@@ -375,12 +376,12 @@
       </section>
 
       <section id="notifications">
-        <h2>3. 카카오톡 체결 알림 자동 저장 지원</h2>
+        <h2>카카오톡 체결 알림 자동 가져오기</h2>
         <ol>
           <li>전체 메뉴에서 체결 알림 자동 가져오기를 엽니다.</li>
           <li>처리 내용 안내를 확인하고 기능을 켠 뒤 Android 설정에서 알림 접근을 허용합니다.</li>
           <li>Android 13 이상에서는 승인 대기 알림 표시 권한도 허용합니다.</li>
-          <li>운용상세 설정에서 카드별 자동 연결을 켜거나 끕니다.</li>
+          <li>운용상세의 운용설정에서 카드별 자동 연결을 켜거나 끕니다.</li>
           <li>종 아이콘의 승인 대기함에서 내용을 확인·수정한 후 해당 운용에 저장합니다.</li>
         </ol>
         <div class="callout"><strong>승인 후 반영</strong>체결 알림은 매매이력에 바로 저장되지 않습니다. 승인 대기함에 최대 100건 보관되며 사용자가 확인하고 승인한 경우에만 반영됩니다.</div>
@@ -393,10 +394,11 @@
           <table>
             <thead><tr><th>설정</th><th>안내</th></tr></thead>
             <tbody>
-              <tr><td>화면 모드</td><td>시스템·주간·야간 모드 중 선택합니다.</td></tr>
+              <tr><td>화면 모드</td><td>시스템·주간·야간 모드 중 선택하거나 야간예약 시작·종료 시간을 설정합니다.</td></tr>
               <tr><td>글자 크기</td><td>80~130% 범위에서 슬라이더를 누른 상태로 움직여 조절합니다.</td></tr>
               <tr><td>수정·삭제·초기화 안전설정</td><td>위험 작업이 필요할 때만 켜고 작업 후 다시 끕니다.</td></tr>
-              <tr><td>증권사 앱 등록</td><td>주문정보를 복사한 뒤 열 앱을 선택·변경·해제합니다.</td></tr>
+              <tr><td>증권사 앱 등록</td><td>주문계획에서 열 증권사 앱을 선택·변경·해제합니다.</td></tr>
+              <tr><td>운영상세 하단 메뉴</td><td>주문계획·체결입력·매매이력·리포트·운용설정으로 이동합니다.</td></tr>
               <tr><td>운용별 고급설정</td><td>운영 기준, 운영버전, 매도이익 확장운영, T 산정방식과 리버스 복귀조건을 관리합니다.</td></tr>
             </tbody>
           </table>
@@ -419,7 +421,7 @@
         <a class="button-link" href="https://lowskylab.github.io/startrade-privacy/">개인정보처리방침 열기</a>
         <h3>문의</h3>
         <p>설명서에서 해결되지 않는 내용은 <a href="mailto:lowsky.lab@gmail.com">lowsky.lab@gmail.com</a>으로 문의할 수 있습니다. 개발자는 사용자의 기기나 Google Drive 자료에 접근하거나 원격으로 삭제할 수 없습니다.</p>
-        <p class="updated">최종 갱신: 2026년 8월 24일 · StarTrade v2.60</p>
+        <p class="updated">최종 갱신: 2026년 8월 26일 · StarTrade v2.60 (versionCode 96)</p>
       </section>
     </article>
   </div>
