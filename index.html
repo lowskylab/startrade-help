@@ -146,7 +146,7 @@
 
     .screenshots {
       display: grid;
-      grid-template-columns: repeat(9, minmax(180px, 1fr));
+      grid-template-columns: repeat(7, minmax(180px, 1fr));
       gap: 16px;
       overflow-x: auto;
       padding: 5px 2px 14px;
@@ -202,7 +202,7 @@
       nav a { padding: 7px 8px; font-size: 14px; }
       section { padding: 24px 19px; border-radius: 18px; }
       .quick-grid, .feature-grid, .term-grid { grid-template-columns: 1fr; }
-      .screenshots { grid-template-columns: repeat(9, 76vw); }
+      .screenshots { grid-template-columns: repeat(7, 76vw); }
       .guide-visuals { grid-template-columns: 1fr; }
     }
   </style>
@@ -271,7 +271,7 @@
 
       <section id="screens">
         <h2>주요 화면</h2>
-        <p>아래 이미지는 SOXL과 TQQQ를 각각 총 50,000달러·40분할로 가상 운용한 실제 앱 화면입니다. SOXL은 7월 1일, 가격 변동이 비교적 작은 TQQQ는 7월 15일에 시작했습니다. 휴대전화에서는 좌우로 밀어 확인하고, 이미지를 누르면 원본 크기로 볼 수 있습니다.</p>
+        <p>아래 이미지는 SOXL과 TQQQ를 각각 총 50,000달러·40분할로 가상 운용한 실제 앱 화면입니다. SOXL은 7월 1일에 시작한 주문계획·매매이력 예시로, 가격 변동이 비교적 작은 TQQQ는 7월 15일에 시작한 주문계획·매매이력과 리포트·통계 그래프 예시로 사용했습니다. 휴대전화에서는 좌우로 밀어 확인하고, 이미지를 누르면 원본 크기로 볼 수 있습니다.</p>
         <div class="screenshots">
           <figure><a href="assets/screenshots/v96-portfolio-list.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-portfolio-list.png" alt="SOXL과 TQQQ 가상 운용 목록" loading="lazy"></a><figcaption>SOXL·TQQQ 운용 현황</figcaption></figure>
           <figure><a href="assets/screenshots/v96-tqqq-order-plan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-order-plan.png" alt="TQQQ V4.0 동시 매수와 매도 주문계획" loading="lazy"></a><figcaption>TQQQ V4.0 주문계획</figcaption></figure>
@@ -280,8 +280,6 @@
           <figure><a href="assets/screenshots/v96-tqqq-statistics-only.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-statistics-only.png" alt="TQQQ 단독 운용 통계 가격과 보유 추세" loading="lazy"></a><figcaption>TQQQ 가격·보유수량 통계</figcaption></figure>
           <figure><a href="assets/screenshots/v96-soxl-order-plan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-order-plan.png" alt="SOXL V4.0 동시 매수와 매도 주문계획" loading="lazy"></a><figcaption>SOXL V4.0 주문계획</figcaption></figure>
           <figure><a href="assets/screenshots/v96-soxl-trade-history.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-trade-history.png" alt="SOXL 일별 매수와 Star 매도 체결 이력" loading="lazy"></a><figcaption>SOXL 일별 매수와 Star 매도</figcaption></figure>
-          <figure><a href="assets/screenshots/v96-soxl-report.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-report.png" alt="SOXL 가격과 계단식 보유수량 리포트" loading="lazy"></a><figcaption>일별 매수와 매도에 따른 보유수량</figcaption></figure>
-          <figure><a href="assets/screenshots/v96-soxl-statistics.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-statistics.png" alt="SOXL 운용 통계 가격과 보유 추세" loading="lazy"></a><figcaption>SOXL 가격·보유수량 통계 그래프</figcaption></figure>
         </div>
         <p class="visual-note">거래일마다 종가와 주문계획에 따라 매수하고, 종가가 Star 가격을 넘으면 보유수량의 1/4을 매도한 가상 시나리오입니다. TQQQ 그래프는 종가가 목표가에 도달하기 전까지만 표시했습니다. 화면의 가격·체결·수익은 사용법 설명용이며 실제 투자성과가 아닙니다.</p>
       </section>
@@ -386,8 +384,6 @@
         <div class="guide-visuals" id="report-examples">
           <figure class="guide-shot"><a href="assets/screenshots/v96-tqqq-report.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-report.png" alt="TQQQ 운용상세 리포트의 가격과 보유수량 추세" loading="lazy"></a><figcaption>TQQQ 리포트: 종가가 Star 가격을 넘을 때 보유수량이 감소하고, 목표가에 도달하기 전까지의 흐름을 보여줍니다.</figcaption></figure>
           <figure class="guide-shot"><a href="assets/screenshots/v96-tqqq-statistics-only.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-statistics-only.png" alt="TQQQ 단독 운용 통계 가격과 보유 추세" loading="lazy"></a><figcaption>TQQQ 통계: 비교적 작은 종가 변동과 세 차례 Star 매도에 따른 보유수량 변화를 확인합니다.</figcaption></figure>
-          <figure class="guide-shot"><a href="assets/screenshots/v96-soxl-report.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-report.png" alt="SOXL 운용상세 리포트 가격과 계단식 보유수량 추세" loading="lazy"></a><figcaption>운용상세 리포트: 점선 Star 가격과 목표가, 일별 매수로 증가하고 1/4 매도 때 감소하는 보유수량을 함께 봅니다.</figcaption></figure>
-          <figure class="guide-shot"><a href="assets/screenshots/v96-soxl-statistics.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-statistics.png" alt="SOXL 운용 통계 가격과 보유 추세" loading="lazy"></a><figcaption>운용 통계: 선택 기간의 가격선과 매수·매도에 따른 보유수량 변화를 비교합니다.</figcaption></figure>
         </div>
       </section>
 
