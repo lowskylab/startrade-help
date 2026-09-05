@@ -94,8 +94,7 @@
     }
 
     nav {
-      position: sticky;
-      top: 20px;
+      position: static;
       padding: 20px;
       background: var(--surface);
       border: 1px solid var(--line);
@@ -103,7 +102,9 @@
       box-shadow: var(--shadow);
     }
 
-    nav { max-height: calc(100dvh - 40px); overflow-y: auto; } nav strong a { color: var(--blue-dark); } section > .eyebrow { color: var(--blue-dark); } nav strong { display: block; margin-bottom: 9px; color: var(--blue-dark); }
+    nav strong { display: block; margin-bottom: 9px; color: var(--blue-dark); }
+    nav strong a { color: var(--blue-dark); }
+    section > .eyebrow { color: var(--blue-dark); }
     nav a { display: block; padding: 8px 10px; border-radius: 9px; color: var(--muted); text-decoration: none; font-weight: 650; }
     nav a:hover, nav a:focus { color: var(--blue-dark); background: var(--surface-soft); }
 
@@ -190,8 +191,8 @@
       .hero-inner { grid-template-columns: 1fr; }
       .hero-star { display: none; }
       .layout { grid-template-columns: 1fr; }
-      nav { max-height: none; overflow-y: visible; position: static; display: grid; grid-template-columns: repeat(2, 1fr); }
-      nav { max-height: calc(100dvh - 40px); overflow-y: auto; } nav strong a { color: var(--blue-dark); } section > .eyebrow { color: var(--blue-dark); } nav strong { grid-column: 1 / -1; }
+      nav { display: grid; grid-template-columns: repeat(2, 1fr); }
+      nav strong { grid-column: 1 / -1; }
     }
 
     @media (max-width: 620px) {
