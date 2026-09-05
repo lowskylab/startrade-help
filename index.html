@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="StarTrade v2.60 사용자 설명서. 운용 등록, 주문계획, 체결, 통계, 백업과 화면 설정 안내.">
+  <meta name="description" content="StarTrade v2.61(113) 사용 안내. 공통사항, 운용모드 소개, 무한매수법, VR을 분리해 안내합니다.">
   <title>StarTrade 사용자 설명서</title>
   <style>
     :root {
@@ -103,7 +103,7 @@
       box-shadow: var(--shadow);
     }
 
-    nav strong { display: block; margin-bottom: 9px; color: var(--blue-dark); }
+    nav { max-height: calc(100dvh - 40px); overflow-y: auto; } nav strong a { color: var(--blue-dark); } section > .eyebrow { color: var(--blue-dark); } nav strong { display: block; margin-bottom: 9px; color: var(--blue-dark); }
     nav a { display: block; padding: 8px 10px; border-radius: 9px; color: var(--muted); text-decoration: none; font-weight: 650; }
     nav a:hover, nav a:focus { color: var(--blue-dark); background: var(--surface-soft); }
 
@@ -190,8 +190,8 @@
       .hero-inner { grid-template-columns: 1fr; }
       .hero-star { display: none; }
       .layout { grid-template-columns: 1fr; }
-      nav { position: static; display: grid; grid-template-columns: repeat(2, 1fr); }
-      nav strong { grid-column: 1 / -1; }
+      nav { max-height: none; overflow-y: visible; position: static; display: grid; grid-template-columns: repeat(2, 1fr); }
+      nav { max-height: calc(100dvh - 40px); overflow-y: auto; } nav strong a { color: var(--blue-dark); } section > .eyebrow { color: var(--blue-dark); } nav strong { grid-column: 1 / -1; }
     }
 
     @media (max-width: 620px) {
@@ -218,8 +218,8 @@
             <h1>StarTrade<br>사용자 설명서</h1>
           </div>
         </div>
-        <p class="lead">공통 기능과 무한매수법·VR의 운용 등록, 주문계획, 체결, 통계와 암호화 백업을 현재 앱 화면 기준으로 안내합니다.</p>
-        <span class="version">v2.61 · versionCode 106 기준</span>
+        <p class="lead">공통사항을 먼저 확인하고 운용모드를 선택하세요. 무한매수법과 VR의 사용법을 각각 독립된 영역에서 안내합니다.</p>
+        <span class="version">v2.61 · versionCode 113 기준</span>
       </div>
       <img class="hero-star" src="assets/app-icon.png" alt="">
     </div>
@@ -227,26 +227,23 @@
 
   <div class="layout">
     <nav aria-label="설명서 목차">
-      <strong>목차</strong>
-      <a href="#before">먼저 알아두기</a>
-      <a href="#modes">운용모드·용어</a>
-      <a href="#quick">빠른 시작</a>
-      <a href="#screens">화면 구성</a>
-      <a href="#add">운용 추가</a>
-      <a href="#orders">주문계획</a>
-      <a href="#formulas">수식 구조</a>
-      <a href="#trades">체결과 이력</a>
-      <a href="#reports">리포트·통계</a>
-      <a href="#backup">백업·복원</a>
-      <a href="#notifications">체결 알림</a>
-      <a href="#settings">화면·안전 설정</a>
-      <a href="#faq">문제 해결</a>
-      <a href="#support">문의·개인정보</a>
-    </nav>
+<strong><a href="#common">1. 공통사항</a></strong><a href="#before">저장·시세 기본사항</a><a href="#backup">백업·복원</a><a href="#notifications">체결 알림</a><a href="#settings">화면·안전 설정</a><a href="#faq">문제 해결·문의</a>
+<strong><a href="#modes">2. 운용모드 소개</a></strong>
+<strong><a href="#infinite">3. 무한매수법</a></strong><a href="#add">운용 추가</a><a href="#orders">주문계획</a><a href="#trades">체결입력·매매이력</a><a href="#infinite-report">리포트·통계</a><a href="#infinite-settings">운용설정</a><a href="#formulas">수식·문제 해결</a><a href="#screens">화면 예시</a>
+<strong><a href="#vr">4. VR</a></strong><a href="#vr-add">운용 추가</a><a href="#vr-orders">사이클 주문계획</a><a href="#vr-trades">거래입력·POOL 조정</a><a href="#vr-history">매매이력</a><a href="#vr-report">리포트·통계</a><a href="#vr-settings">운용설정</a><a href="#vr-formulas">수식·문제 해결</a>
+</nav>
 
-    <article>
-      <section id="before">
-        <h2>먼저 알아두기</h2>
+    <article><section id="common"><p class="eyebrow">1 · 공통사항</p><h2>두 모드에서 함께 사용하는 기능</h2>
+<p>처음에는 공통 설정을 확인한 뒤 운용모드를 선택하세요. 이후에는 선택한 모드의 안내를 따라 등록부터 주문계획, 체결과 결과 확인까지 진행합니다.</p>
+<div class="callout"><strong>주문은 증권사 앱에서 실행합니다</strong>StarTrade는 주문계획과 운용 기록을 관리합니다. 실제 주문은 증권사 앱에서 가격·수량·주문조건을 확인한 후 제출합니다.</div>
+<h3 id="quick">공통 시작 순서</h3><ol><li>시장·종목코드·종목명과 사용할 증권사 앱을 확인합니다.</li><li>아래 운용모드 소개를 읽고 운용 추가에서 모드를 선택합니다.</li><li>선택한 모드의 기준을 설정하고 종가와 주문계획을 확인합니다.</li><li>증권사에서 실제로 체결된 내용을 기록하고 수량·정산금액을 대조합니다.</li><li>주요 변경 전후에 운용자료를 백업합니다.</li></ol>
+<h3>공통 용어와 체결 확인</h3><dl><dt><strong>투자원가</strong></dt><dd>평균단가 × 현재 보유수량입니다.</dd><dt><strong>총 정산금액</strong></dt><dd>매수는 수수료·세금이 포함된 실제 출금액, 매도는 비용이 차감된 실제 입금액입니다. 입력한 정산금액은 잔고·평균단가·매도손익 계산에 우선 적용됩니다.</dd><dt><strong>종가</strong></dt><dd>저장된 시세의 날짜와 출처를 확인하세요. 체결가격과 종가는 서로 다를 수 있습니다.</dd></dl>
+<p>체결문 분석 또는 알림 자동 가져오기를 사용해도 종목·매매구분·체결수량·총 정산금액을 실제 거래명세와 대조한 후 저장합니다. 부분체결 안내의 개별 체결수량과 누적 수수료·누적 결제금액을 구분하고, 누적 금액을 반복 합산하지 마세요.</p>
+<h3 id="reports">통계 조회</h3><p>조회조건은 <strong>운용모드 → 종목</strong> 순서로 선택합니다. 기간과 운용상태를 함께 확인하세요. 모드별 조회단위와 그래프 기준은 아래 각 모드의 리포트 안내에서 설명합니다.</p>
+<p>‘기간과 겹침’은 선택한 기간과 실제 운용기간이 일부라도 겹치는 운용을 포함합니다. 금액은 한국·미국 통화를 구분해 확인합니다.</p></section>
+
+<section id="before">
+        <h2>저장·시세·백업 기본사항</h2>
         <div class="callout danger">
           <strong>자동 주문 앱이 아닙니다</strong>
           StarTrade는 사용자가 입력한 자료를 바탕으로 계획과 기록을 정리하는 도구입니다. 증권사 앱에서 종목·가격·수량·주문조건을 직접 확인하고 최종 주문을 제출해야 합니다.
@@ -259,79 +256,81 @@
         </div>
       </section>
 
-      <section id="modes">
-        <h2>두 운용모드와 공통 기능</h2>
-        <div class="feature-grid">
-          <div class="feature"><h3>공통 기능</h3><p>종목·종가·증권사 연결, 체결 입력, 매매이력, 리포트·통계, 안전설정과 암호화 백업을 두 모드에서 함께 사용합니다.</p></div>
-          <div class="feature"><h3>무한매수법</h3><p>총 운용금액과 분할횟수로 T와 Star Point를 계산하고 일반·리버스 주문계획을 관리합니다.</p></div>
-          <div class="feature"><h3>VR(밸류 리밸런싱)</h3><p>사이클별 V와 밴드를 만들고 보유수량·POOL을 기준으로 단계별 매수·매도 주문을 계산합니다.</p></div>
+<section id="backup">
+        <h2>백업과 복원</h2>
+        <div class="quick-grid">
+          <div class="step"><span class="step-number">1</span><h3>위치 선택</h3><p>Google Drive 또는 휴대전화 저장소를 선택합니다.</p></div>
+          <div class="step"><span class="step-number">2</span><h3>비밀번호 입력</h3><p>8자 이상의 비밀번호를 지정합니다. 비밀번호는 앱에 저장되지 않습니다.</p></div>
+          <div class="step"><span class="step-number">3</span><h3>파일 확인</h3><p>저장 날짜·시각이 포함된 암호화 백업 파일이 실제로 생성됐는지 확인합니다.</p></div>
+          <div class="step"><span class="step-number">4</span><h3>복원 검산</h3><p>복원 후 카드 수, 체결 건수, 평단, 수량, 현금과 손익을 비교합니다.</p></div>
         </div>
+        <ul>
+          <li>Google Drive는 처음 선택한 폴더의 접근 권한을 기억하여 이후 같은 폴더에 바로 저장할 수 있습니다.</li>
+          <li>새 백업은 AES-256-GCM으로 암호화하며 기존 일반 JSON 백업도 복원할 수 있습니다.</li>
+          <li>백업 비밀번호를 잃으면 복구할 수 없습니다. 비밀번호와 백업 파일을 서로 다른 안전한 위치에 보관하세요.</li>
+          <li>Twelve Data API 키와 승인 대기 체결 알림은 백업에 포함되지 않습니다.</li>
+        </ul>
+      </section>
+
+<section id="notifications">
+        <h2>카카오톡 체결 알림 자동 가져오기</h2>
+        <ol>
+          <li>전체 메뉴에서 체결 알림 자동 가져오기를 엽니다.</li>
+          <li>처리 내용 안내를 확인하고 기능을 켠 뒤 Android 설정에서 알림 접근을 허용합니다.</li>
+          <li>Android 13 이상에서는 승인 대기 알림 표시 권한도 허용합니다.</li>
+          <li>운용상세의 운용설정에서 카드별 자동 연결을 켜거나 끕니다.</li>
+          <li>종 아이콘의 승인 대기함에서 내용을 확인·수정한 후 해당 운용에 저장합니다.</li>
+        </ol>
+        <div class="callout"><strong>승인 후 반영</strong>체결 알림은 매매이력에 바로 저장되지 않습니다. 승인 대기함에 최대 100건 보관되며 사용자가 확인하고 승인한 경우에만 반영됩니다.</div>
+        <p>알림 원문과 승인 대기 자료는 개발자 서버로 전송하지 않고 기기 내부에서 처리합니다. 잠금화면 알림에는 종목·가격·수량을 표시하지 않습니다.</p>
+      </section>
+
+<section id="settings">
+        <h2>화면과 안전 설정</h2>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>구분</th><th>용어</th><th>뜻</th></tr></thead>
+            <thead><tr><th>설정</th><th>안내</th></tr></thead>
             <tbody>
-              <tr><td>공통</td><td>투자원가</td><td>평균단가 × 현재 보유수량</td></tr>
-              <tr><td>공통</td><td>정산금액</td><td>수수료·세금을 포함해 실제 계좌에서 출금되거나 입금된 금액</td></tr>
-              <tr><td>무한매수법</td><td>T</td><td>분할매수 진행 단계를 나타내는 값</td></tr>
-              <tr><td>무한매수법</td><td>Star Point·Star 가격</td><td>T에 따라 달라지는 목표수익률과 이를 반영한 주문 기준가격</td></tr>
-              <tr><td>무한매수법</td><td>LOC·MOC</td><td>종가 조건 주문과 장 마감 가격 주문. 실제 지원 방식은 증권사에서 확인</td></tr>
-              <tr><td>VR</td><td>사이클</td><td>V와 주문계획을 계산하고 성과를 마감하는 1~4주의 운용 구간</td></tr>
-              <tr><td>VR</td><td>V·G</td><td>V는 목표 평가금액, G는 다음 사이클 V 증가폭을 조절하는 값</td></tr>
-              <tr><td>VR</td><td>최소·최대밴드</td><td>V 아래·위에서 매수·매도 단계가격을 계산하는 기준금액</td></tr>
-              <tr><td>VR</td><td>POOL</td><td>매수에 사용할 수 있는 예수금. 입금·출금과 사용한도를 별도로 관리</td></tr>
+              <tr><td>화면 모드</td><td>시스템·주간·야간 모드 중 선택하거나 야간예약 시작·종료 시간을 설정합니다.</td></tr>
+              <tr><td>글자 크기</td><td>80~130% 범위에서 슬라이더를 누른 상태로 움직여 조절합니다.</td></tr>
+              <tr><td>수정·삭제·초기화 안전설정</td><td>위험 작업이 필요할 때만 켜고 작업 후 다시 끕니다.</td></tr>
+              <tr><td>증권사 앱 등록</td><td>주문계획에서 열 증권사 앱을 선택·변경·해제합니다.</td></tr>
+              <tr><td>운영상세 하단 메뉴</td><td>아이콘과 글자를 눌러 주문계획·입력·매매이력·리포트·운용설정으로 이동합니다. 본문은 하단 메뉴 위에서 스크롤됩니다.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section id="quick">
-        <h2>빠른 시작</h2>
-        <div class="quick-grid">
-          <div class="step"><span class="step-number">1</span><h3>운용모드 선택</h3><p>운용 추가에서 무한매수법 또는 VR(밸류 리밸런싱)을 선택합니다.</p></div>
-          <div class="step"><span class="step-number">2</span><h3>운용 기준 설정</h3><p>공통 종목정보를 입력하고 선택한 모드의 금액·주기·공식과 기본값을 확인합니다.</p></div>
-          <div class="step"><span class="step-number">3</span><h3>종가와 주문계획</h3><p>최신 종가 날짜를 확인하고 주문계획을 계산합니다. 실제 주문은 증권사 앱에서 직접 실행합니다.</p></div>
-          <div class="step"><span class="step-number">4</span><h3>체결·POOL 저장</h3><p>실제 매수·매도를 기록합니다. VR에서는 같은 화면에서 현재 사이클의 POOL 입금·출금도 관리합니다.</p></div>
-          <div class="step"><span class="step-number">5</span><h3>결과 검산</h3><p>매매이력, 평균단가, 보유수량, 현금과 손익을 실제 거래명세와 비교합니다.</p></div>
-          <div class="step"><span class="step-number">6</span><h3>백업</h3><p>주요 변경 전 8자 이상의 비밀번호로 휴대전화 또는 Google Drive에 암호화 백업합니다.</p></div>
-        </div>
+<section id="faq"><h2>공통 문제 해결</h2><details><summary>종가가 갱신되지 않습니다.</summary><p>인터넷 연결, 시장과 종목코드, 미국 제공처, Twelve Data API 키와 사용한도를 확인하세요. 저장된 최근 정상 종가가 있으면 주문계획에 사용된 날짜를 반드시 확인합니다.</p></details>
+<details><summary>수정·삭제 버튼이 동작하지 않습니다.</summary><p>전체 메뉴의 수정·삭제·초기화 안전설정을 잠시 켜세요. 작업을 마치면 다시 꺼두는 것이 안전합니다.</p></details>
+<details><summary>백업 비밀번호를 잊었습니다.</summary><p>비밀번호는 앱이나 개발자 서버에 저장되지 않아 복구할 수 없습니다. 기억하고 있는 다른 백업 파일을 사용해야 합니다.</p></details>
+<details><summary>평균단가나 현금이 거래명세와 다릅니다.</summary><p>매매이력의 매수·매도 방향, 총 정산금액, 수수료·세금과 체결 순서를 확인하세요. 수정 전에는 반드시 백업하세요.</p></details></section>
+
+<section id="support">
+        <h2>문의와 개인정보</h2>
+        <p>개인정보 처리 방식, 외부 통신, 보관·삭제 방법은 별도의 개인정보처리방침에서 확인할 수 있습니다.</p>
+        <a class="button-link" href="https://lowskylab.github.io/startrade-privacy/">개인정보처리방침 열기</a>
+        <h3>문의</h3>
+        <p>설명서에서 해결되지 않는 내용은 <a href="mailto:lowsky.lab@gmail.com">lowsky.lab@gmail.com</a>으로 문의할 수 있습니다. 개발자는 사용자의 기기나 Google Drive 자료에 접근하거나 원격으로 삭제할 수 없습니다.</p>
+        <p class="updated">최종 갱신: 2026년 9월 5일 · StarTrade v2.61 (versionCode 113)</p>
       </section>
 
-      <section id="screens">
-        <h2>주요 화면</h2>
-        <p>아래 이미지는 무한매수법의 SOXL·TQQQ 가상 운용 예시입니다. VR 화면은 주문계획·거래입력·매매이력·리포트·운용설정의 동일한 5개 탭 구조를 사용하지만 V·밴드·POOL과 사이클 중심으로 표시됩니다. 휴대전화에서는 좌우로 밀어 확인하고, 이미지를 누르면 원본 크기로 볼 수 있습니다.</p>
-        <div class="screenshots">
-          <figure><a href="assets/screenshots/v96-portfolio-list.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-portfolio-list.png" alt="SOXL과 TQQQ 가상 운용 목록" loading="lazy"></a><figcaption>SOXL·TQQQ 운용 현황</figcaption></figure>
-          <figure><a href="assets/screenshots/v96-tqqq-order-plan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-order-plan.png" alt="TQQQ V4.0 동시 매수와 매도 주문계획" loading="lazy"></a><figcaption>TQQQ V4.0 주문계획</figcaption></figure>
-          <figure><a href="assets/screenshots/v96-tqqq-trade-history.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-trade-history.png" alt="TQQQ 일별 매수와 Star 매도 이력" loading="lazy"></a><figcaption>TQQQ 일별 매수와 Star 매도</figcaption></figure>
-          <figure><a href="assets/screenshots/v96-tqqq-report.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-report.png" alt="TQQQ 목표가 도달 전 가격과 보유수량 리포트" loading="lazy"></a><figcaption>TQQQ 목표가 도달 전 리포트</figcaption></figure>
-          <figure><a href="assets/screenshots/v96-tqqq-statistics-only.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-statistics-only.png" alt="TQQQ 단독 운용 통계 가격과 보유 추세" loading="lazy"></a><figcaption>TQQQ 가격·보유수량 통계</figcaption></figure>
-          <figure><a href="assets/screenshots/v96-soxl-order-plan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-order-plan.png" alt="SOXL V4.0 동시 매수와 매도 주문계획" loading="lazy"></a><figcaption>SOXL V4.0 주문계획</figcaption></figure>
-          <figure><a href="assets/screenshots/v96-soxl-trade-history.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-trade-history.png" alt="SOXL 일별 매수와 Star 매도 체결 이력" loading="lazy"></a><figcaption>SOXL 일별 매수와 Star 매도</figcaption></figure>
-        </div>
-        <p class="visual-note">거래일마다 종가와 주문계획에 따라 매수하고, 종가가 Star 가격을 넘으면 보유수량의 1/4을 매도한 가상 시나리오입니다. TQQQ 그래프는 종가가 목표가에 도달하기 전까지만 표시했습니다. 화면의 가격·체결·수익은 사용법 설명용이며 실제 투자성과가 아닙니다.</p>
-      </section>
+<section id="modes"><p class="eyebrow">2 · 운용모드 소개</p><h2>무한매수법과 VR 선택하기</h2>
+<p>두 모드는 주문계획을 만드는 기준이 다릅니다. 운용 추가에서 사용할 모드를 선택하고, 해당 모드의 용어와 절차를 확인하세요.</p>
+<div class="feature-grid"><div class="feature"><h3>무한매수법</h3><p>운용금액·분할횟수와 체결 기록을 바탕으로 T와 Star 가격을 계산합니다. 일반·리버스 운용의 주문계획을 관리합니다.</p><a class="button-link" href="#infinite">무한매수법 안내로 이동</a></div><div class="feature"><h3>VR · 밸류 리밸런싱</h3><p>정해진 사이클마다 목표 평가금액 V와 밴드를 계산합니다. 보유주식과 예수금 POOL을 바탕으로 단계별 주문을 관리합니다.</p><a class="button-link" href="#vr">VR 안내로 이동</a></div></div>
+<p><strong>운용모드와 운영버전은 다릅니다.</strong> V2.2·V3.0·V4.0은 무한매수법 안에서 선택하는 운영버전입니다. VR의 적립식·거치식·인출식은 투자법이며, 기본·실력은 계산공식 구분입니다.</p></section>
 
-      <section id="add">
-        <h2>운용 추가</h2>
-        <h3>공통 시작 단계</h3>
-        <ol>
-          <li>운용모드에서 <strong>무한매수법</strong> 또는 <strong>VR(밸류 리밸런싱)</strong>을 선택합니다.</li>
-          <li>한국·미국 시장과 종목코드, 종목명, 선택 입력 별칭을 입력합니다.</li>
-        </ol>
-        <h3>무한매수법 추가</h3>
+<section id="infinite"><p class="eyebrow">3 · 무한매수법 전용</p><h2>무한매수법</h2>
+<p>운용 등록 → 주문계획 확인 → 증권사 주문 → 체결입력 → 매매이력·리포트 확인 순서로 사용합니다.</p>
+<div class="term-grid"><div class="term"><h3>T</h3><p>투자 진행값입니다. 운영버전과 체결 내용에 따라 산정됩니다.</p></div><div class="term"><h3>Star Point·Star 가격</h3><p>T에 따라 달라지는 수익률 기준과 이를 가격으로 환산한 주문 기준입니다.</p></div><div class="term"><h3>LOC·MOC</h3><p>종가 조건 주문과 장 마감 가격 주문입니다. 증권사의 지원 여부와 접수시간을 확인합니다.</p></div><div class="term"><h3>일반·리버스</h3><p>무한매수법 내부의 운용 상태입니다. 진입·복귀 조건에 따라 주문계획이 달라집니다.</p></div></div></section>
+
+<section id="add"><h2>무한매수법 · 운용 추가</h2><h3>무한매수법 추가</h3>
         <ol>
           <li>운용 시작일, 총 운용금액, 분할매수 횟수와 기대 순수익률을 입력합니다.</li>
           <li>운영버전 V2.2·V3.0·V4.0 중 사용할 기준을 선택합니다. 새 운용의 기본값은 V4.0입니다.</li>
           <li>내용을 다시 확인한 후 저장합니다.</li>
         </ol>
         <div class="callout"><strong>무한매수법 기본값</strong>큰수 비율 12%, 추가 1주 범위 -30%, 리버스 복귀 기준 평균단가 -20%가 적용됩니다.</div>
-        <h3>VR 추가</h3>
-        <ol>
-          <li>적립식·거치식·인출식과 기본공식·실력공식을 선택합니다.</li>
-          <li>시작일, 1~4주 사이클, 적립·인출금, 초기 POOL과 초기 보유분을 입력합니다.</li>
-          <li>G, G 변이, 최소·최대밴드, POOL 사용한도와 변이는 기본값 요약으로 확인합니다.</li>
-          <li>운용 생성 후 운용설정 → VR 고급설정에서 세부값을 변경할 수 있습니다.</li>
-        </ol>
         <h3>엑셀 가져오기</h3>
         <ol>
           <li>제공된 양식에 체결일·매매구분·체결가·수량을 입력합니다.</li>
@@ -342,23 +341,8 @@
         <div class="callout"><strong>Excel 가져오기 범위</strong>현재 Excel 이력으로 새 운용을 만드는 기능은 무한매수법 운용 추가에서 사용합니다.</div>
       </section>
 
-      <section id="orders">
-        <h2>종가와 주문계획</h2>
-        <h3>두 모드의 공통 흐름</h3>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>기능</th><th>역할</th></tr></thead>
-            <tbody>
-              <tr><td>외부 종가 새로고침</td><td>시세 자료만 갱신합니다. 이미 저장된 주문계획은 자동으로 바뀌지 않습니다.</td></tr>
-              <tr><td>주문계획 재계산</td><td>종가를 갱신한 뒤 현재 조건으로 새 계획을 계산하고 저장합니다.</td></tr>
-              <tr><td>증권사 앱 열기</td><td>사용자가 등록한 증권사 앱을 엽니다. 가격·수량과 주문조건은 앱에서 확인한 뒤 증권사 앱에 직접 입력합니다.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <h3>무한매수법 주문계획</h3>
+<section id="orders"><h2>무한매수법 · 주문계획</h2><h3>무한매수법 주문계획</h3>
         <p>T와 Star Point를 기준으로 일반모드의 Star·평단·추가 LOC 매수와 Star·목표가 매도를 계산합니다. 조건을 충족하면 리버스모드의 MOC·최근 5거래일 평균 LOC 계획으로 전환합니다.</p>
-        <h3>VR 주문계획</h3>
-        <p>현재 사이클의 V에서 최소·최대밴드를 계산한 뒤 시작 보유수량을 기준으로 단계별 매수·매도 가격을 표시합니다. 매수는 POOL 사용한도, 매도는 보유수량에 도달하면 주문 단계 한도보다 먼저 멈춥니다.</p>
         <ul>
           <li>주문계획에 사용된 종가 날짜와 마지막 계산 시각을 확인합니다.</li>
           <li>16시 이후 자동 갱신이 실패하면 최근 정상 종가의 날짜를 안내하고 저장 자료로 계산을 이어갈 수 있습니다.</li>
@@ -372,31 +356,7 @@
         </div>
       </section>
 
-      <section id="formulas">
-        <h2>두 운용모드의 수식 구조</h2>
-        <h3>공통 계산</h3>
-        <div class="callout"><strong>투자원가</strong>평균단가 × 보유수량. 직접 입력한 총 정산금액이 있으면 수수료·세금으로 계산한 금액보다 우선합니다.</div>
-        <h3>무한매수법</h3>
-        <ul>
-          <li><strong>T</strong>는 투자 진행값이며 운용버전과 실제 체결에 따라 계산됩니다.</li>
-          <li><strong>Star Point</strong> = 기대수익률 - 기대수익률 ÷ (분할횟수 ÷ 2) × T</li>
-          <li><strong>Star 가격</strong>은 평균단가·Star Point·매도 수수료·세율을 반영합니다.</li>
-          <li>일반모드는 T 구간에 따라 Star·평단 매수금액을 배분하고, 리버스모드는 진입·복귀 조건과 최근 5거래일 평균을 사용합니다.</li>
-        </ul>
-        <h3>VR(밸류 리밸런싱)</h3>
-        <ul>
-          <li><strong>첫 V</strong> = 시작 종가 × 시작 보유수량</li>
-          <li><strong>다음 V</strong> = 직전 V + 시작 POOL ÷ G + 정기 자금흐름. 실력공식은 여기에 직전 평가금액과 V의 차이를 G로 보정한 값을 더합니다.</li>
-          <li><strong>최소밴드</strong> = V × (1 - 최소밴드 비율), <strong>최대밴드</strong> = V × (1 + 최대밴드 비율)</li>
-          <li><strong>매수 단계가격</strong> = 최소밴드 ÷ (시작 보유수량 + n), <strong>매도 단계가격</strong> = 최대밴드 ÷ (시작 보유수량 - n)</li>
-          <li><strong>매수 사용한도</strong> = max(예정 POOL + 입금 - 출금, 0) × POOL 사용한도 비율</li>
-        </ul>
-        <div class="callout"><strong>서로 다른 한도</strong>POOL 사용한도는 10~80%이고, 매수·매도 주문 단계 n의 설정 범위는 10~60입니다.</div>
-      </section>
-
-      <section id="trades">
-        <h2>체결 입력과 매매이력</h2>
-        <p>체결 입력은 아래 4가지 방식을 지원합니다.</p>
+<section id="trades"><h2>무한매수법 · 체결입력과 매매이력</h2><p>체결 입력은 아래 4가지 방식을 지원합니다.</p>
         <div class="quick-grid">
           <div class="step">
             <span class="step-number">1</span>
@@ -428,7 +388,6 @@
         </ul>
         <h3>과거 기록 수정</h3>
         <p>안전설정을 켜면 매매이력 카드의 수정·삭제 버튼을 사용할 수 있습니다. 과거 기록을 변경하면 이후 거래를 시간순으로 다시 적용하여 평균단가·수량·현금·손익을 전면 재계산합니다.</p>
-        <p>VR의 현재 사이클 POOL 카드도 안전설정을 켜면 날짜·적립/인출·금액·메모를 수정하거나 삭제할 수 있습니다. 지난 사이클의 POOL 조정은 확정된 사이클 계산을 보호하기 위해 조회만 가능합니다.</p>
         <div class="callout danger"><strong>수정 전 백업</strong>과거 체결을 수정하거나 삭제하기 전에 반드시 최신 암호화 백업을 만들어 두세요.</div>
         <div class="guide-visuals" id="trade-example">
           <figure class="guide-shot"><a href="assets/screenshots/v96-tqqq-trade-history.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-trade-history.png" alt="TQQQ 매매이력의 일별 매수와 Star 매도" loading="lazy"></a><figcaption>TQQQ: Star 가격을 넘은 날의 1/4 매도와 체결 후 수량·평단·실현손익을 확인합니다.</figcaption></figure>
@@ -436,89 +395,81 @@
         </div>
       </section>
 
-      <section id="reports">
-        <h2>리포트와 운용 통계</h2>
-        <div class="feature-grid">
-          <div class="feature"><h3>공통 리포트</h3><p>가격 추세, 매매 내역, 보유 규모와 현재·최종 성과를 확인합니다.</p></div>
-          <div class="feature"><h3>모드별 통계</h3><p>무한매수법은 운용 단위, VR은 운용 또는 사이클 단위로 조회하며 두 모드를 필터로 구분합니다.</p></div>
-          <div class="feature"><h3>가격·보유 추세</h3><p>종가·평균단가·Star 가격·목표가 선과 보유수량 변화를 확인합니다. Star 가격은 점선으로 표시하며 확대·축소, 좌우 이동과 전체화면을 지원합니다.</p></div>
-          <div class="feature"><h3>Excel 내보내기</h3><p>화면과 같은 성과 순서의 요약 시트와 매매 자료를 파일로 저장합니다.</p></div>
-        </div>
-        <p>통계의 <strong>기간과 겹침</strong> 조건은 선택 기간과 실제 운용기간이 일부라도 겹치는 현재·종료 운용을 포함합니다. 전체 종목 조회 시 같은 종목의 여러 운용은 통합하고 한국·미국 통화를 구분합니다.</p>
-        <div class="guide-visuals" id="report-examples">
+<section id="infinite-report"><h2>무한매수법 · 리포트와 통계</h2><p>종가·평균단가·Star 가격·목표가와 보유수량 변화를 비교합니다. 매매가 발생한 날의 평균단가·Star 가격은 당일 주문계획 기준을 유지해 체결 당시의 판단 근거를 확인할 수 있습니다. 통계 그래프에도 같은 기준이 적용됩니다.</p>
+<p>무한매수법 통계는 운용카드 단위로 조회합니다. 리포트에서 그래프 확대·축소·좌우 이동·전체화면과 Excel 내보내기를 사용할 수 있습니다.</p><div class="guide-visuals" id="report-examples">
           <figure class="guide-shot"><a href="assets/screenshots/v96-tqqq-report.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-report.png" alt="TQQQ 운용상세 리포트의 가격과 보유수량 추세" loading="lazy"></a><figcaption>TQQQ 리포트: 종가가 Star 가격을 넘을 때 보유수량이 감소하고, 목표가에 도달하기 전까지의 흐름을 보여줍니다.</figcaption></figure>
           <figure class="guide-shot"><a href="assets/screenshots/v96-tqqq-statistics-only.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-statistics-only.png" alt="TQQQ 단독 운용 통계 가격과 보유 추세" loading="lazy"></a><figcaption>TQQQ 통계: 비교적 작은 종가 변동과 세 차례 Star 매도에 따른 보유수량 변화를 확인합니다.</figcaption></figure>
         </div>
       </section>
 
-      <section id="backup">
-        <h2>백업과 복원</h2>
-        <div class="quick-grid">
-          <div class="step"><span class="step-number">1</span><h3>위치 선택</h3><p>Google Drive 또는 휴대전화 저장소를 선택합니다.</p></div>
-          <div class="step"><span class="step-number">2</span><h3>비밀번호 입력</h3><p>8자 이상의 비밀번호를 지정합니다. 비밀번호는 앱에 저장되지 않습니다.</p></div>
-          <div class="step"><span class="step-number">3</span><h3>파일 확인</h3><p>저장 날짜·시각이 포함된 암호화 백업 파일이 실제로 생성됐는지 확인합니다.</p></div>
-          <div class="step"><span class="step-number">4</span><h3>복원 검산</h3><p>복원 후 카드 수, 체결 건수, 평단, 수량, 현금과 손익을 비교합니다.</p></div>
-        </div>
+<section id="infinite-settings"><h2>무한매수법 · 운용설정</h2><p>운용설정과 고급설정에서 운영버전, 운용금액·분할횟수·기대수익률, T 산정방식, 매도이익 확장운영, 추가 LOC 및 리버스 복귀조건을 확인합니다. 변경 후 적용되는 주문계획을 다시 확인하세요.</p></section>
+
+<section id="formulas"><h2>무한매수법 · 수식</h2><h3>무한매수법</h3>
         <ul>
-          <li>Google Drive는 처음 선택한 폴더의 접근 권한을 기억하여 이후 같은 폴더에 바로 저장할 수 있습니다.</li>
-          <li>새 백업은 AES-256-GCM으로 암호화하며 기존 일반 JSON 백업도 복원할 수 있습니다.</li>
-          <li>백업 비밀번호를 잃으면 복구할 수 없습니다. 비밀번호와 백업 파일을 서로 다른 안전한 위치에 보관하세요.</li>
-          <li>Twelve Data API 키와 승인 대기 체결 알림은 백업에 포함되지 않습니다.</li>
+          <li><strong>T</strong>는 투자 진행값이며 운용버전과 실제 체결에 따라 계산됩니다.</li>
+          <li><strong>Star Point</strong> = 기대수익률 - 기대수익률 ÷ (분할횟수 ÷ 2) × T</li>
+          <li><strong>Star 가격</strong>은 평균단가·Star Point·매도 수수료·세율을 반영합니다.</li>
+          <li>일반모드는 T 구간에 따라 Star·평단 매수금액을 배분하고, 리버스모드는 진입·복귀 조건과 최근 5거래일 평균을 사용합니다.</li>
         </ul>
-      </section>
+        </section>
 
-      <section id="notifications">
-        <h2>카카오톡 체결 알림 자동 가져오기</h2>
-        <ol>
-          <li>전체 메뉴에서 체결 알림 자동 가져오기를 엽니다.</li>
-          <li>처리 내용 안내를 확인하고 기능을 켠 뒤 Android 설정에서 알림 접근을 허용합니다.</li>
-          <li>Android 13 이상에서는 승인 대기 알림 표시 권한도 허용합니다.</li>
-          <li>운용상세의 운용설정에서 카드별 자동 연결을 켜거나 끕니다.</li>
-          <li>종 아이콘의 승인 대기함에서 내용을 확인·수정한 후 해당 운용에 저장합니다.</li>
-        </ol>
-        <div class="callout"><strong>승인 후 반영</strong>체결 알림은 매매이력에 바로 저장되지 않습니다. 승인 대기함에 최대 100건 보관되며 사용자가 확인하고 승인한 경우에만 반영됩니다.</div>
-        <p>알림 원문과 승인 대기 자료는 개발자 서버로 전송하지 않고 기기 내부에서 처리합니다. 잠금화면 알림에는 종목·가격·수량을 표시하지 않습니다.</p>
-      </section>
+<section id="infinite-faq"><h2>무한매수법 · 문제 해결</h2><details><summary>주문계획이 체결 후에도 바뀌지 않습니다.</summary><p>v2.58 이후 주문계획은 계산 시점에 고정됩니다. 하단의 주문계획 재계산 버튼을 눌러야 체결과 현재 조건이 새 계획에 반영됩니다.</p></details>
+<details><summary>리버스 주문이 표시되지 않습니다.</summary><p>최근 종가, 최종 목표가, T, 분할횟수와 일반모드 복귀조건을 확인하세요. 종가가 5건보다 적으면 최근 5거래일 평균 계획도 계산되지 않을 수 있습니다.</p></details></section>
 
-      <section id="settings">
-        <h2>화면과 안전 설정</h2>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>설정</th><th>안내</th></tr></thead>
-            <tbody>
-              <tr><td>화면 모드</td><td>시스템·주간·야간 모드 중 선택하거나 야간예약 시작·종료 시간을 설정합니다.</td></tr>
-              <tr><td>글자 크기</td><td>80~130% 범위에서 슬라이더를 누른 상태로 움직여 조절합니다.</td></tr>
-              <tr><td>수정·삭제·초기화 안전설정</td><td>위험 작업이 필요할 때만 켜고 작업 후 다시 끕니다.</td></tr>
-              <tr><td>증권사 앱 등록</td><td>주문계획에서 열 증권사 앱을 선택·변경·해제합니다.</td></tr>
-              <tr><td>운영상세 하단 메뉴</td><td>주문계획·체결입력·매매이력·리포트·운용설정으로 이동합니다.</td></tr>
-              <tr><td>무한매수법 고급설정</td><td>운영 기준, 운영버전, 매도이익 확장운영, T 산정방식과 리버스 복귀조건을 관리합니다.</td></tr>
-              <tr><td>VR 고급설정</td><td>투자법·공식·사이클, G, 밴드, POOL 사용한도와 주문 단계 n을 관리합니다.</td></tr>
-            </tbody>
-          </table>
+<section id="screens">
+        <h2>무한매수법 화면 예시</h2>
+        <p>아래 이미지는 무한매수법의 SOXL·TQQQ 가상 운용 예시입니다. 휴대전화에서는 좌우로 밀어 확인하고, 이미지를 누르면 원본 크기로 볼 수 있습니다.</p>
+        <p class="visual-note">이 이미지는 v2.60(96)의 가상 예시입니다. 현재 v2.61(113)의 메뉴 아이콘과 화면 배치에는 차이가 있습니다.</p><div class="screenshots">
+          <figure><a href="assets/screenshots/v96-portfolio-list.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-portfolio-list.png" alt="SOXL과 TQQQ 가상 운용 목록" loading="lazy"></a><figcaption>SOXL·TQQQ 운용 현황</figcaption></figure>
+          <figure><a href="assets/screenshots/v96-tqqq-order-plan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-order-plan.png" alt="TQQQ V4.0 동시 매수와 매도 주문계획" loading="lazy"></a><figcaption>TQQQ V4.0 주문계획</figcaption></figure>
+          <figure><a href="assets/screenshots/v96-tqqq-trade-history.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-trade-history.png" alt="TQQQ 일별 매수와 Star 매도 이력" loading="lazy"></a><figcaption>TQQQ 일별 매수와 Star 매도</figcaption></figure>
+          <figure><a href="assets/screenshots/v96-tqqq-report.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-report.png" alt="TQQQ 목표가 도달 전 가격과 보유수량 리포트" loading="lazy"></a><figcaption>TQQQ 목표가 도달 전 리포트</figcaption></figure>
+          <figure><a href="assets/screenshots/v96-tqqq-statistics-only.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-tqqq-statistics-only.png" alt="TQQQ 단독 운용 통계 가격과 보유 추세" loading="lazy"></a><figcaption>TQQQ 가격·보유수량 통계</figcaption></figure>
+          <figure><a href="assets/screenshots/v96-soxl-order-plan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-order-plan.png" alt="SOXL V4.0 동시 매수와 매도 주문계획" loading="lazy"></a><figcaption>SOXL V4.0 주문계획</figcaption></figure>
+          <figure><a href="assets/screenshots/v96-soxl-trade-history.png" target="_blank" rel="noopener"><img src="assets/screenshots/v96-soxl-trade-history.png" alt="SOXL 일별 매수와 Star 매도 체결 이력" loading="lazy"></a><figcaption>SOXL 일별 매수와 Star 매도</figcaption></figure>
         </div>
+        <p class="visual-note">거래일마다 종가와 주문계획에 따라 매수하고, 종가가 Star 가격을 넘으면 보유수량의 1/4을 매도한 가상 시나리오입니다. TQQQ 그래프는 종가가 목표가에 도달하기 전까지만 표시했습니다. 화면의 가격·체결·수익은 사용법 설명용이며 실제 투자성과가 아닙니다.</p>
       </section>
 
-      <section id="faq">
-        <h2>자주 묻는 문제</h2>
-        <details><summary>종가가 갱신되지 않습니다.</summary><p>인터넷 연결, 시장과 종목코드, 미국 제공처, Twelve Data API 키와 사용한도를 확인하세요. 저장된 최근 정상 종가가 있으면 주문계획에 사용된 날짜를 반드시 확인합니다.</p></details>
-        <details><summary>주문계획이 체결 후에도 바뀌지 않습니다.</summary><p>v2.58 이후 주문계획은 계산 시점에 고정됩니다. 하단의 주문계획 재계산 버튼을 눌러야 체결과 현재 조건이 새 계획에 반영됩니다.</p></details>
-        <details><summary>수정·삭제 버튼이 동작하지 않습니다.</summary><p>전체 메뉴의 수정·삭제·초기화 안전설정을 잠시 켜세요. 작업을 마치면 다시 꺼두는 것이 안전합니다.</p></details>
-        <details><summary>리버스 주문이 표시되지 않습니다.</summary><p>최근 종가, 최종 목표가, T, 분할횟수와 일반모드 복귀조건을 확인하세요. 종가가 5건보다 적으면 최근 5거래일 평균 계획도 계산되지 않을 수 있습니다.</p></details>
-        <details><summary>VR 주문계획이 표시되지 않습니다.</summary><p>사이클 시작일보다 앞선 정상 종가, 시작 보유수량, V와 밴드, 현재 POOL과 사용한도를 확인하세요. 매수는 POOL 사용한도, 매도는 보유수량에 먼저 도달하면 표시 단계가 줄어듭니다.</p></details>
-        <details><summary>POOL 수정·삭제 버튼이 비활성화됩니다.</summary><p>전체 메뉴의 안전설정을 켜고 현재 사이클의 기록인지 확인하세요. 지난 사이클의 POOL 조정은 조회만 가능합니다.</p></details>
-        <details><summary>백업 비밀번호를 잊었습니다.</summary><p>비밀번호는 앱이나 개발자 서버에 저장되지 않아 복구할 수 없습니다. 기억하고 있는 다른 백업 파일을 사용해야 합니다.</p></details>
-        <details><summary>평균단가나 현금이 거래명세와 다릅니다.</summary><p>매매이력의 매수·매도 방향, 총 정산금액, 수수료·세금과 체결 순서를 확인하세요. 수정 전에는 반드시 백업하세요.</p></details>
+<section id="vr"><p class="eyebrow">4 · VR 전용</p><h2>VR · 밸류 리밸런싱</h2><p>운용 등록 → 사이클 주문계획 → 거래입력·POOL 조정 → 사이클별 매매이력 → 리포트 순서로 사용합니다.</p>
+<div class="term-grid"><div class="term"><h3>사이클</h3><p>V와 주문계획을 계산하는 1~4주의 운용 구간입니다.</p></div><div class="term"><h3>V · 목표 평가금액</h3><p>사이클의 기준 금액입니다. 현재 주식 평가금액과 항상 같은 값은 아닙니다.</p></div><div class="term"><h3>G · 기울기</h3><p>다음 사이클 V 증가폭을 조절합니다. 고급설정 범위는 5~50입니다.</p></div><div class="term"><h3>밴드 · POOL</h3><p>최소·최대밴드는 주문 기준 금액이며 POOL은 운용 예수금입니다. POOL 사용한도는 매수계획에 사용할 비율입니다.</p></div></div></section>
+
+<section id="vr-add"><h2>VR · 운용 추가</h2><h3>VR 추가</h3>
+        <ol>
+          <li>적립식·거치식·인출식과 기본공식·실력공식을 선택합니다.</li>
+          <li>시작일, 1~4주 사이클, 적립·인출금, 초기 POOL과 초기 보유분을 입력합니다.</li>
+          <li>G, G 변이, 최소·최대밴드, POOL 사용한도와 변이는 기본값 요약으로 확인합니다.</li>
+          <li>운용 생성 후 운용설정 → VR 고급설정에서 세부값을 변경할 수 있습니다.</li>
+        </ol>
+        <p>적립식은 정기적으로 자금을 더하고, 거치식은 정기 자금흐름 없이 운용하며, 인출식은 정기 인출을 반영합니다. 운용카드에는 ‘적립식-실력’처럼 투자법과 공식이 함께 표시됩니다.</p><p>초기 POOL 아래에는 선택한 투자법에 해당하는 안내만 표시됩니다. 앱 안내 기준은 보유주식 대비 적립식 0~10%, 거치식 10~20%, 인출식 20~30%입니다.</p></section>
+
+<section id="vr-orders"><h2>VR · 사이클 주문계획</h2><ol><li>사이클 카드에서 시작일·종료일, V, 최소·최대밴드와 POOL을 확인합니다.</li><li>사이클 제목 오른쪽의 ‘주문 계획 보기’를 눌러 매수·매도 단계가격과 수량을 확인합니다.</li><li>‘종가확인’ 근처의 확인 날짜·시간과 Source를 확인합니다. 확인 시각과 실제 종가의 거래일은 구분합니다.</li><li>증권사 앱에서 가격·수량·주문조건을 확인한 뒤 주문합니다.</li></ol><p>매수 단계는 POOL 사용한도, 매도 단계는 보유수량에 도달하면 제한됩니다. 시작일 이전 종가가 없으면 첫 주문계획을 만들 수 없으므로 종가 자료를 먼저 확인합니다.</p></section>
+
+<section id="vr-trades"><h2>VR · 거래입력과 POOL 조정</h2><h3>주식 거래입력</h3><p>체결일, 매수·매도, 실제 체결가격·수량과 수수료·세금·총 정산금액을 확인해 저장합니다. 저장 후 보유수량·평균단가·POOL을 증권사 거래명세와 대조합니다.</p>
+<h3>POOL 적립·인출</h3><p>거래입력의 POOL 조정에서 적립 또는 인출을 선택하고 현재 사이클 안의 조정일·금액·메모를 입력합니다. POOL 조정 저장은 예수금에 반영되며 주식수와 평균단가는 직접 변경하지 않습니다.</p>
+<h3>V:POOL 비율 유지 추천 수량</h3><p>금액을 입력하면 현재 사이클 V와 현재 POOL의 비율로 조정 후 목표 V를 계산하고, V 차이를 최신 저장 종가로 나눈 값을 가장 가까운 정수 주수로 안내합니다. 목표 V, 조정 전후 POOL과 기준 종가·날짜를 함께 확인하세요.</p>
+<div class="callout"><strong>앱 계산 예시</strong>V 10,000, POOL 100에서 200을 적립하면 조정 후 POOL은 300, 비율상 목표 V는 30,000입니다. V 차이 20,000을 종가 117.28로 나누면 반올림한 171주 매수로 안내됩니다.</div>
+<p>이 값은 추가 자금흐름에 대한 비율 계산 안내입니다. POOL로 주식을 매수하거나 매도대금을 POOL에 남기면 POOL 잔액도 달라집니다. 추천 표시만으로 V나 주식수, 주문계획이 자동 변경되지는 않으며 실제 체결은 별도로 기록합니다.</p><p>현재 V·POOL이 0 이하이거나 종가가 없으면 추천을 계산할 수 없습니다. 현재 POOL보다 큰 금액은 인출할 수 없습니다.</p></section>
+
+<section id="vr-history"><h2>VR · 매매이력</h2><p>전체매매요약은 한 줄에 3개 항목으로 표시됩니다. 전체 체결·현재 POOL·실현손익, 누적 매수·매도·비용과 POOL 누적 적립·인출을 확인합니다.</p><p>각 사이클 카드를 펼치면 주식 매매와 POOL 조정 기록을 함께 확인할 수 있습니다. 안전설정을 켜면 현재 사이클의 POOL 조정일·유형·금액·메모를 수정하거나 삭제할 수 있습니다. 지난 사이클의 POOL 조정은 조회만 가능합니다.</p></section>
+
+<section id="vr-report"><h2>VR · 리포트와 통계</h2><p>리포트에서 종가와 V·최소밴드·최대밴드, 보유수량 및 운용 성과를 확인합니다. 목표 평가금액 V와 실제 평가금액의 차이를 사이클별 거래와 함께 살펴보세요.</p><p>통계의 VR 조회단위는 <strong>운용카드 단위</strong>와 <strong>사이클 단위</strong> 중 선택합니다. 운용카드는 전체 운용을, 사이클은 각 기간을 나눠 조회합니다. 운용모드가 ‘전체’여도 VR 조회단위는 VR 자료에만 적용되고 무한매수법은 운용카드 단위로 조회합니다.</p></section>
+
+<section id="vr-settings"><h2>VR · 운용설정</h2><p>운용설정 → VR 고급설정에서 투자법·공식·사이클, G와 변이, 최소·최대밴드, POOL 사용한도와 변이, 주문 단계 한도를 확인합니다. G 변경범위는 5~50입니다. 설정 저장 시 표시되는 적용 시점을 확인하세요.</p></section>
+
+<section id="vr-formulas"><h2>VR · 수식</h2><h3>VR(밸류 리밸런싱)</h3>
+        <ul>
+          <li><strong>첫 V</strong> = 시작 종가 × 시작 보유수량</li>
+          <li><strong>다음 V</strong> = 직전 V + 시작 POOL ÷ G + 정기 자금흐름. 실력공식은 여기에 (직전 평가금액 - 직전 V) ÷ (2 × √G)를 더합니다.</li>
+          <li><strong>최소밴드</strong> = V × (1 - 최소밴드 비율), <strong>최대밴드</strong> = V × (1 + 최대밴드 비율)</li>
+          <li><strong>매수 단계가격</strong> = 최소밴드 ÷ (시작 보유수량 + n), <strong>매도 단계가격</strong> = 최대밴드 ÷ (시작 보유수량 - n)</li>
+          <li><strong>매수 사용한도</strong> = max(예정 POOL + 입금 - 출금, 0) × POOL 사용한도 비율</li>
+        </ul>
+        <div class="callout"><strong>서로 다른 한도</strong>POOL 사용한도는 10~80%이고, 매수·매도 주문 단계 n의 설정 범위는 10~60입니다.</div>
       </section>
 
-      <section id="support">
-        <h2>문의와 개인정보</h2>
-        <p>개인정보 처리 방식, 외부 통신, 보관·삭제 방법은 별도의 개인정보처리방침에서 확인할 수 있습니다.</p>
-        <a class="button-link" href="https://lowskylab.github.io/startrade-privacy/">개인정보처리방침 열기</a>
-        <h3>문의</h3>
-        <p>설명서에서 해결되지 않는 내용은 <a href="mailto:lowsky.lab@gmail.com">lowsky.lab@gmail.com</a>으로 문의할 수 있습니다. 개발자는 사용자의 기기나 Google Drive 자료에 접근하거나 원격으로 삭제할 수 없습니다.</p>
-        <p class="updated">최종 갱신: 2026년 9월 3일 · StarTrade v2.61 (versionCode 106)</p>
-      </section>
-    </article>
+<section id="vr-faq"><h2>VR · 문제 해결</h2><details><summary>VR 주문계획이 표시되지 않습니다.</summary><p>사이클 시작일보다 앞선 정상 종가, 시작 보유수량, V와 밴드, 현재 POOL과 사용한도를 확인하세요. 매수는 POOL 사용한도, 매도는 보유수량에 먼저 도달하면 표시 단계가 줄어듭니다.</p></details>
+<details><summary>POOL 수정·삭제 버튼이 비활성화됩니다.</summary><p>전체 메뉴의 안전설정을 켜고 현재 사이클의 기록인지 확인하세요. 지난 사이클의 POOL 조정은 조회만 가능합니다.</p></details></section></article>
   </div>
 
   <footer>
