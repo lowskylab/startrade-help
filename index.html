@@ -166,6 +166,7 @@
     }
 
     .guide-shot { min-width: 0; }
+    .guide-shot img { width: 100%; height: auto; }
     .guide-shot a { display: block; border-radius: 18px; }
     .guide-shot a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
     .visual-note { color: var(--muted); font-size: 14px; }
@@ -434,7 +435,7 @@
         <p class="visual-note">거래일마다 종가와 주문계획에 따라 매수하고, 종가가 Star 가격을 넘으면 보유수량의 1/4을 매도한 가상 시나리오입니다. TQQQ 그래프는 종가가 목표가에 도달하기 전까지만 표시했습니다. 화면의 가격·체결·수익은 사용법 설명용이며 실제 투자성과가 아닙니다.</p>
       </section>
 
-<section id="vr"><p class="eyebrow">4 · VR 전용</p><h2>VR · 밸류 리밸런싱</h2><p>운용 등록 → 사이클 주문계획 → 거래입력·POOL 조정 → 사이클별 매매이력 → 리포트 순서로 사용합니다.</p>
+<section id="vr"><p class="visual-note">아래 VR 스크린샷 6장은 가상 TQQQ 적립식 운용으로 촬영했습니다. 표시된 체결·가격·수익은 사용법 설명용이며 실제 투자성과가 아닙니다.</p><p class="eyebrow">4 · VR 전용</p><h2>VR · 밸류 리밸런싱</h2><p>운용 등록 → 사이클 주문계획 → 거래입력·POOL 조정 → 사이클별 매매이력 → 리포트 순서로 사용합니다.</p>
 <div class="term-grid"><div class="term"><h3>사이클</h3><p>V와 주문계획을 계산하는 1~4주의 운용 구간입니다.</p></div><div class="term"><h3>V · 목표 평가금액</h3><p>사이클의 기준 금액입니다. 현재 주식 평가금액과 항상 같은 값은 아닙니다.</p></div><div class="term"><h3>G · 기울기</h3><p>다음 사이클 V 증가폭을 조절합니다. 고급설정 범위는 5~50입니다.</p></div><div class="term"><h3>밴드 · POOL</h3><p>최소·최대밴드는 주문 기준 금액이며 POOL은 운용 예수금입니다. POOL 사용한도는 매수계획에 사용할 비율입니다.</p></div></div></section>
 
 <section id="vr-add"><h2>VR · 운용 추가</h2><h3>VR 추가</h3>
@@ -451,7 +452,11 @@
 <p>입력 안내 개선이 적용된 앱에서는 필수 항목을 비우거나 잘못 입력한 채 저장하면 해당 항목을 팝업으로 안내합니다. ‘입력 확인’을 누르거나 팝업을 닫으면 해당 입력란으로 화면과 커서가 이동합니다. 위쪽 항목부터 수정하고 다시 저장하세요. 종목명·별칭은 선택 입력이며, 수수료를 비우면 0으로 처리합니다.</p>
 <p class="visual-note">입력 팝업·커서 이동과 적립금·인출금·POOL 조정의 새 안내 문구는 2026년 9월 8일 수정사항입니다. 현재 설치된 앱에는 아직 적용되지 않았을 수 있습니다.</p><p>적립식은 정기적으로 자금을 더하고, 거치식은 정기 자금흐름 없이 운용하며, 인출식은 정기 인출을 반영합니다. 운용카드에는 ‘적립식-실력’처럼 투자법과 공식이 함께 표시됩니다.</p><p>초기 POOL 아래에는 선택한 투자법에 해당하는 안내만 표시됩니다. 앱 안내 기준은 보유주식 대비 적립식 0~10%, 거치식 10~20%, 인출식 20~30%입니다.</p></section>
 
-<section id="vr-orders"><h2>VR · 사이클 주문계획</h2><ol><li>사이클 카드에서 시작일·종료일, V, 최소·최대밴드와 POOL을 확인합니다.</li><li>사이클 제목 오른쪽의 ‘주문 계획 보기’를 눌러 매수·매도 단계가격과 수량을 확인합니다.</li><li>‘종가확인’ 근처의 확인 날짜·시간과 Source를 확인합니다. 확인 시각과 실제 종가의 거래일은 구분합니다.</li><li>증권사 앱에서 가격·수량·주문조건을 확인한 뒤 주문합니다.</li></ol><p>매수 단계는 POOL 사용한도, 매도 단계는 보유수량에 도달하면 제한됩니다. 시작일 이전 종가가 없으면 첫 주문계획을 만들 수 없으므로 종가 자료를 먼저 확인합니다.</p></section>
+<section id="vr-orders"><h2>VR · 사이클 주문계획</h2><ol><li>사이클 카드에서 시작일·종료일, V, 최소·최대밴드와 POOL을 확인합니다.</li><li>사이클 제목 오른쪽의 ‘주문 계획 보기’를 눌러 매수·매도 단계가격과 수량을 확인합니다.</li><li>‘종가확인’ 근처의 확인 날짜·시간과 Source를 확인합니다. 확인 시각과 실제 종가의 거래일은 구분합니다.</li><li>증권사 앱에서 가격·수량·주문조건을 확인한 뒤 주문합니다.</li></ol><p>매수 단계는 POOL 사용한도, 매도 단계는 보유수량에 도달하면 제한됩니다. 시작일 이전 종가가 없으면 첫 주문계획을 만들 수 없으므로 종가 자료를 먼저 확인합니다.</p><div class="guide-visuals">
+<figure class="guide-shot"><a href="assets/screenshots/v115-01-vr-cycles.png" target="_blank" rel="noopener"><img src="assets/screenshots/v115-01-vr-cycles.png" alt="가상 TQQQ VR 사이클별 V 밴드와 시작 POOL 화면" width="1080" height="1920" loading="lazy" decoding="async"></a><figcaption>사이클 현황: 기간별 시작 수량·V·밴드·POOL을 확인하고 주문 계획 보기를 누릅니다.</figcaption></figure>
+<figure class="guide-shot"><a href="assets/screenshots/v115-02-vr-buy-plan.png" target="_blank" rel="noopener"><img src="assets/screenshots/v115-02-vr-buy-plan.png" alt="가상 TQQQ VR 단계별 매수 가격과 보유주수 및 POOL 계획" width="1080" height="1920" loading="lazy" decoding="async"></a><figcaption>매수계획: 단계별 가격·보유주수·예상 POOL을 확인합니다.</figcaption></figure>
+</div><p class="visual-note">2026-09-06 · v2.62(115) 가상 운용 예시입니다. 최신 화면의 배치·안내 문구와 차이가 있으며, 이미지를 누르면 원본을 크게 볼 수 있습니다.</p>
+</section>
 
 <section id="vr-trades"><h2>VR · 거래입력과 POOL 조정</h2><h3>주식 거래입력</h3><p>체결일, 매수·매도, 실제 체결가격·수량과 수수료·세금·총 정산금액을 확인해 저장합니다. 저장 후 보유수량·평균단가·POOL을 증권사 거래명세와 대조합니다.</p>
 <h3>POOL 적립·인출</h3><p><strong>정기적인 적립 인출이 아닌 일회성으로 POOL을 조정하는 기능입니다.</strong> 초기운용에 설정한 정기 적립금·인출금과 구분해 사용하세요.</p><p>거래입력의 POOL 조정에서 적립 또는 인출을 선택하고 현재 사이클 안의 조정일·금액·메모를 입력합니다. POOL 조정 저장은 예수금에 반영되며 주식수와 평균단가는 직접 변경하지 않습니다.</p>
@@ -461,14 +466,24 @@
 <p>추천은 입력한 POOL 조정 후 잔액에 비례한 참고 수량이며 수수료는 포함하지 않습니다. 정수 반올림으로 실제 비율에 차이가 생길 수 있습니다. 같은 POOL로 추천 수량을 매수하거나 매도대금을 POOL에 남기면 잔액도 달라집니다. 추천은 이 추가 현금 변동까지 반영한 자동 리밸런싱이 아닙니다. POOL 저장은 주식 매매를 자동 반영하지 않으므로 실제 체결은 별도로 기록하세요.</p>
 <p>보유수량·현재 POOL·기준 가격이 0 이하이거나 유효하지 않으면 추천을 계산할 수 없습니다. 현재 POOL보다 큰 금액은 인출할 수 없습니다.</p></section>
 
-<section id="vr-history"><h2>VR · 매매이력</h2><p>전체매매요약은 한 줄에 3개 항목으로 표시됩니다. 전체 체결·현재 POOL·실현손익, 누적 매수·매도·비용과 POOL 누적 적립·인출을 확인합니다.</p><p>각 사이클 카드를 펼치면 주식 매매와 POOL 조정 기록을 함께 확인할 수 있습니다. 안전설정을 켜면 현재 사이클의 POOL 조정일·유형·금액·메모를 수정하거나 삭제할 수 있습니다. 지난 사이클의 POOL 조정은 조회만 가능합니다.</p></section>
+<section id="vr-history"><h2>VR · 매매이력</h2><p>전체매매요약은 한 줄에 3개 항목으로 표시됩니다. 전체 체결·현재 POOL·실현손익, 누적 매수·매도·비용과 POOL 누적 적립·인출을 확인합니다.</p><p>각 사이클 카드를 펼치면 주식 매매와 POOL 조정 기록을 함께 확인할 수 있습니다. 안전설정을 켜면 현재 사이클의 POOL 조정일·유형·금액·메모를 수정하거나 삭제할 수 있습니다. 지난 사이클의 POOL 조정은 조회만 가능합니다.</p><div class="guide-visuals">
+<figure class="guide-shot"><a href="assets/screenshots/v115-03-vr-history.png" target="_blank" rel="noopener"><img src="assets/screenshots/v115-03-vr-history.png" alt="가상 TQQQ VR 전체 매매 요약과 사이클별 거래 기록" width="1080" height="1920" loading="lazy" decoding="async"></a><figcaption>매매이력: 전체 체결과 POOL을 확인하고 사이클별 기록을 펼쳐 봅니다.</figcaption></figure>
+</div><p class="visual-note">2026-09-06 · v2.62(115) 가상 운용 예시입니다. 최신 화면의 배치·안내 문구와 차이가 있으며, 이미지를 누르면 원본을 크게 볼 수 있습니다.</p>
+</section>
 
 <section id="vr-report"><h2>VR · 리포트와 통계</h2>
 <p>운용 성과 → 원화환산 손익 → 자금 투입·인출 → 현재 사이클·밴드 현황 → 실제 매매 내역 → 보유 규모 → POOL 운용 기록 → 자료 받기 순서로 확인합니다. 밴드는 V → V max → V min, POOL 기록은 최대 POOL → 최소 POOL → 평균 POOL 사용률 순서입니다.</p>
 <p>통계에서 VR만 선택하면 <strong>사이클 단위</strong>가 기본이며, <strong>운용카드 단위</strong>로 바꾸어 전체 운용을 확인할 수 있습니다. 운용모드가 <strong>전체</strong>이면 무한매수법은 운용카드 기간, VR은 개별 사이클 기간을 기준으로 필터·합계·요약·그래프·전체 확대에 반영합니다. VR 운용카드를 중복 합산하지 않으며 선택 기간에 해당하는 사이클이 없으면 해당 VR은 제외됩니다.</p>
-<p>운용중·종료 상태는 운용카드 상태를 기준으로 먼저 적용합니다. 합계는 시장과 운용모드를 구분해 확인하세요.</p></section>
+<p>운용중·종료 상태는 운용카드 상태를 기준으로 먼저 적용합니다. 합계는 시장과 운용모드를 구분해 확인하세요.</p><div class="guide-visuals">
+<figure class="guide-shot"><a href="assets/screenshots/v115-04-vr-chart.png" target="_blank" rel="noopener"><img src="assets/screenshots/v115-04-vr-chart.png" alt="가상 TQQQ VR의 V 밴드 현재총액 순투입금과 보유수량 그래프" width="1080" height="1920" loading="lazy" decoding="async"></a><figcaption>가격 추세: V·최대 및 최소 밴드·현재총액·순투입금과 보유수량 흐름을 비교합니다.</figcaption></figure>
+<figure class="guide-shot"><a href="assets/screenshots/v115-05-vr-performance.png" target="_blank" rel="noopener"><img src="assets/screenshots/v115-05-vr-performance.png" alt="가상 TQQQ VR의 자금 투입 인출 손익과 진행 사이클" width="1080" height="1920" loading="lazy" decoding="async"></a><figcaption>운용 성과: 자금 투입·인출, 평가·실현손익과 진행 사이클을 확인합니다. 최신 앱에서는 표시 순서가 다릅니다.</figcaption></figure>
+</div><p class="visual-note">2026-09-06 · v2.62(115) 가상 운용 예시입니다. 최신 화면의 배치·안내 문구와 차이가 있으며, 이미지를 누르면 원본을 크게 볼 수 있습니다.</p>
+</section>
 
-<section id="vr-settings"><h2>VR · 운용설정</h2><p>운용설정 → VR 고급설정에서 투자법·공식·사이클, G와 변이, 최소·최대밴드, POOL 사용한도와 변이, 주문 단계 한도를 확인합니다. G 변경범위는 5~50입니다. 설정 저장 시 표시되는 적용 시점을 확인하세요.</p></section>
+<section id="vr-settings"><h2>VR · 운용설정</h2><p>운용설정 → VR 고급설정에서 투자법·공식·사이클, G와 변이, 최소·최대밴드, POOL 사용한도와 변이, 주문 단계 한도를 확인합니다. G 변경범위는 5~50입니다. 설정 저장 시 표시되는 적용 시점을 확인하세요.</p><div class="guide-visuals">
+<figure class="guide-shot"><a href="assets/screenshots/v115-06-vr-settings.png" target="_blank" rel="noopener"><img src="assets/screenshots/v115-06-vr-settings.png" alt="가상 TQQQ VR 고급설정의 투자법 공식 적립금 사이클 선택" width="1080" height="1920" loading="lazy" decoding="async"></a><figcaption>VR 고급설정: 투자법·공식·적립금·사이클을 변경합니다. 저장값은 다음 사이클부터 적용됩니다.</figcaption></figure>
+</div><p class="visual-note">2026-09-06 · v2.62(115) 가상 운용 예시입니다. 최신 화면의 배치·안내 문구와 차이가 있으며, 이미지를 누르면 원본을 크게 볼 수 있습니다.</p>
+</section>
 
 <section id="vr-formulas"><h2>VR · 수식</h2><h3>VR(밸류 리밸런싱)</h3>
         <ul>
